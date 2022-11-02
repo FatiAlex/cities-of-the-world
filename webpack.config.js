@@ -7,6 +7,7 @@ const { merge } = require('webpack-merge');
 const commonConfig = {
   entry: './src/index.tsx',
   output: {
+    publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
