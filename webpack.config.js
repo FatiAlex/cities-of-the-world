@@ -1,8 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { merge } = require('webpack-merge');
 
-module.exports = {
+const commonConfig = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -34,4 +36,38 @@ module.exports = {
     }),
       new CleanWebpackPlugin(),
   ]
+};
+
+const developmentConfig = {
+  devServer: {
+    historyApiFallback: true,
+    port: 3030,
+  },
+};
+
+const productionConfig = {
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].bundle.css',
+    }),
+  ],
+};
+
+module.exports = (env, args) => {
+  switch (args.mode) {
+    case 'development':
+      return merge(commonConfig, developmentConfig);
+    case 'production':
+      return merge(commonConfig, productionConfig);
+    default:
+      throw new Error('No matching configuration was found!');
+  }
 };
