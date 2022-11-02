@@ -1,4 +1,11 @@
-body {
-  color: blue;
-  background-color: lightblue;
-}
+/* abstracts */
+@import 'abstracts/variables';
+
+/* themes */
+@import 'themes/default';
+
+/* vendors */
+@import 'vendors/bootstrap';
+
+/* components */
+@import 'components/buttons';
