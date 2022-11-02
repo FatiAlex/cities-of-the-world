@@ -1,0 +1,20 @@
+{
+  "name": "cities-of-the-world",
+  "version": "1.0.0",
+  "description": "Frontend Challenge - React client that consumes that API and can list, show, create, update, and remove cities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FatiAlex/cities-of-the-world.git"
+  },
+  "keywords": ["react", "sass", "typescript", "jest", "react-testing-library", "webpack"],
+  "author": "Fatima Alexandra Santos Catanho <fati.ale.es@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FatiAlex/cities-of-the-world/issues"
+  },
+  "homepage": "https://github.com/FatiAlex/cities-of-the-world#readme"
+}
