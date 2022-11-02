@@ -12,7 +12,7 @@ const commonConfig = {
     chunkFilename: '[name].bundle.js',
   },
   resolve: {
-    extensions: ['.js','.jsx','.ts','.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
@@ -26,16 +26,16 @@ const commonConfig = {
       {
         test: /\.s[ac]ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-      }
-      ]
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
     }),
-      new CleanWebpackPlugin(),
-  ]
+    new CleanWebpackPlugin(),
+  ],
 };
 
 const developmentConfig = {
@@ -56,7 +56,7 @@ const productionConfig = {
         test: /\.(ts|tsx)$/,
         use: ['ts-loader'],
       },
-    ]
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
