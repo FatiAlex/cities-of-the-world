@@ -2,6 +2,9 @@
   "compilerOptions": {
     "sourceMap": true,
     "jsx": "react",
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
+  "include": [
+    "./jest/jest-setup.ts"
+  ]
 }
