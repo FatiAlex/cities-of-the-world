@@ -1,15 +1,15 @@
-import { ICityFormDTO, ICityFormView } from '../models/city.models';
+import { ICityFormDTO } from '../models/city.models';
 
 export const getCities = async (): Promise<Response> => {
-  return await fetch('http://localhost:3000/api/v1/posts');
+  return await fetch(`${process.env.CITY_API}`);
 };
 
 export const getCityById = async (id: number): Promise<Response> => {
-  return await fetch(`http://localhost:3000/api/v1/posts/${id}`);
+  return await fetch(`${process.env.CITY_API}/${id}`);
 };
 
 export const postCity = async (city: ICityFormDTO): Promise<Response> => {
-  return await fetch(`http://localhost:3000/api/v1/posts`, {
+  return await fetch(`${process.env.CITY_API}`, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -22,7 +22,7 @@ export const putCity = async (
   id: number,
   city: ICityFormDTO,
 ): Promise<Response> => {
-  return await fetch(`http://localhost:3000/api/v1/posts/${id}`, {
+  return await fetch(`${process.env.CITY_API}/${id}`, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -32,7 +32,7 @@ export const putCity = async (
 };
 
 export const deleteCity = async (id: number): Promise<Response> => {
-  return await fetch(`http://localhost:3000/api/v1/posts/${id}`, {
+  return await fetch(`${process.env.CITY_API}/${id}`, {
     method: 'DELETE',
   });
 };

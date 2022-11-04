@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { Status, Wrapper } from '@googlemaps/react-wrapper';
-import { Dropdown, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { BiDetail } from 'react-icons/bi';
 import { ICityDetailProps } from '../types/city-detail.component.types';
 import useFetchByGetMethod from '../../../hooks/use-fetch-by-get-method.hook';
@@ -82,7 +82,7 @@ const CityDetail = (props: ICityDetailProps) => {
               <>
                 <h4 className="city-detail__map-title">Ubicación</h4>
                 <Wrapper
-                  apiKey="AIzaSyDdD85oxo2gZ9y6BXOV_aSs0RdCCiXRg2c"
+                  apiKey={process.env.GOOGLE_MAPS_API_KEY}
                   render={render}
                 >
                   <GoogleMap

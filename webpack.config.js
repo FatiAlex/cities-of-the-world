@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const { merge } = require('webpack-merge');
 
 const commonConfig = {
@@ -48,6 +49,7 @@ const commonConfig = {
       filename: './index.html',
     }),
     new CleanWebpackPlugin(),
+    new Dotenv(),
   ],
 };
 
