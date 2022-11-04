@@ -17,18 +17,23 @@ const CityForm = (props: ICityFormProps) => {
   // render
   return (
     <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Title</Form.Label>
+      <Form.Group className="mb-3">
+        <Form.Label>Title *</Form.Label>
         <Form.Control
           type="text"
+          required
+          isInvalid={!city.title}
           value={city.title}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             handleFormOnChange(e, 'title')
           }
         />
+        <Form.Control.Feedback type="invalid">
+          Please enter a title.
+        </Form.Control.Feedback>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+      <Form.Group className="mb-3">
         <Form.Label>Content</Form.Label>
         <Form.Control
           as="textarea"
@@ -39,7 +44,7 @@ const CityForm = (props: ICityFormProps) => {
           }
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3">
         <Form.Label>Latitude</Form.Label>
         <Form.Control
           type="number"
@@ -49,7 +54,7 @@ const CityForm = (props: ICityFormProps) => {
           }
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3">
         <Form.Label>Longitude</Form.Label>
         <Form.Control
           type="number"
@@ -59,7 +64,7 @@ const CityForm = (props: ICityFormProps) => {
           }
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3">
         <Form.Label>Image URL</Form.Label>
         <Form.Control
           type="text"

@@ -35,7 +35,9 @@ const CityCreate = () => {
 
   // handlers
   const handleConfirm = () => {
-    createCity();
+    if (city.title) {
+      createCity();
+    }
   };
 
   // render

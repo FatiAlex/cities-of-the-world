@@ -46,7 +46,9 @@ const CityEdit = (props: ICityEditProps) => {
 
   // handlers
   const handleOnConfirm = () => {
-    editCity();
+    if (city.title) {
+      editCity();
+    }
   };
 
   const handleEdit = () => {

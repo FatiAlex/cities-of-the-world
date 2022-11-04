@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
+import { Status, Wrapper } from '@googlemaps/react-wrapper';
+import { Dropdown, Spinner } from 'react-bootstrap';
 import { BiDetail } from 'react-icons/bi';
 import { ICityDetailProps } from '../types/city-detail.component.types';
 import useFetchByGetMethod from '../../../hooks/use-fetch-by-get-method.hook';
@@ -9,6 +11,14 @@ import Error from '../../../components/error.component';
 import Image from 'react-bootstrap/Image';
 import FALLBACK_IMAGE from '../../../../assets/images/image-not-found.png';
 import Modal from '../../../components/modal.component';
+import GoogleMap from '../../../components/map.component';
+
+const render = (status: Status): ReactElement => {
+  if (status === Status.FAILURE) {
+    return <></>;
+  }
+  return <Spinner animation="border" variant="info" />;
+};
 
 const CityDetail = (props: ICityDetailProps) => {
   // props
@@ -68,6 +78,23 @@ const CityDetail = (props: ICityDetailProps) => {
               onError={handleImageError}
             />
             <p>{city.content}</p>
+            {city.longitude && city.latitude && (
+              <>
+                <h4 className="city-detail__map-title">Ubicación</h4>
+                <Wrapper
+                  apiKey="AIzaSyDdD85oxo2gZ9y6BXOV_aSs0RdCCiXRg2c"
+                  render={render}
+                >
+                  <GoogleMap
+                    center={{
+                      lat: Number(city.latitude),
+                      lng: Number(city.longitude),
+                    }}
+                    zoom={6}
+                  />
+                </Wrapper>
+              </>
+            )}
           </div>
         </Modal>
       )}

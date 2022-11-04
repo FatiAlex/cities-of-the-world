@@ -7,11 +7,14 @@
 /* vendors */
 @import 'vendors/bootstrap';
 
-/* components */
+/* bootstrap components */
 @import 'components/buttons';
 @import 'components/toast';
 
-/* pages */
+/* project components */
 @import '../views/components/styles/header.component';
 @import '../views/components/styles/layout.component';
+@import '../views/components/styles/map.component';
+
+/* pages */
 @import '../views/pages/cities/cities.page';
