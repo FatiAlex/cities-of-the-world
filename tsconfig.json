@@ -6,5 +6,8 @@
   },
   "include": [
     "./jest/jest-setup.ts"
+  ],
+  "files": [
+    "./assets.d.ts"
   ]
 }

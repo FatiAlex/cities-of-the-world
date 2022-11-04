@@ -1,0 +1,16 @@
+.cities-list .table {
+  margin-top: 2rem;
+
+  &__actions {
+    display: flex;
+
+    svg {
+      margin: 4px;
+      cursor: pointer;
+    }
+  }
+}
+
+.cities-list .alert-info {
+  margin-top: 2rem;
+}

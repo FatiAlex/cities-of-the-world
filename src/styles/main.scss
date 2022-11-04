@@ -9,3 +9,9 @@
 
 /* components */
 @import 'components/buttons';
+@import 'components/toast';
+
+/* pages */
+@import '../views/components/styles/header.component';
+@import '../views/components/styles/layout.component';
+@import '../views/pages/cities/cities.page';
