@@ -2,6 +2,11 @@
 // Overwrites Bootstrap Buttons
 // ****************************
 
+.btn {
+  min-width: 120px;
+  font-weight: 600;
+}
+
 .btn-primary {
   @include button-variant(
     $background: $custom-primary,
