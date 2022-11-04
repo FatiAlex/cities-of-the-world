@@ -2,12 +2,13 @@
   "compilerOptions": {
     "sourceMap": true,
     "jsx": "react",
-    "esModuleInterop": true
+    "types": ["node", "jest"],
+    "esModuleInterop": true,
   },
   "include": [
-    "./jest/jest-setup.ts"
+    "./config/jest/jest-setup.ts",
   ],
   "files": [
-    "./assets.d.ts"
-  ]
+    "./config/typescript/assets.d.ts"
+  ],
 }
