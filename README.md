@@ -5,11 +5,12 @@ Frontend Challenge - React client that consumes an API and can list, show, creat
 ***
 
 ## IMPORTANT
-### Things I would like to add with more time for developing
+### Things I would like to add/do with more time for developing
 
 - Much more unit tests.
 - More robust validations for the creation and editing form.
 - `react-i18next` library for internationalization to scale more easily to future languages.
+- Work with a branching strategy like git flow instead of develop.
 - I could use `redux` to manage the app state, but it is a small app soo I didn't want to overengineer.
 ***
 
