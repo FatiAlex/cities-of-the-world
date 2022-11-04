@@ -46,7 +46,10 @@ const CityEdit = (props: ICityEditProps) => {
 
   // handlers
   const handleOnConfirm = () => {
-    if (city.title) {
+    const notValid = Object.keys(city).find(
+      (key: string) => key !== 'id' && city[key] === '',
+    );
+    if (!notValid) {
       editCity();
     }
   };

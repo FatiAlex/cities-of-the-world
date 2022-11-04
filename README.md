@@ -20,7 +20,7 @@ This is a project made in:
 - `React` with `Typescript`.
 - `SASS` and `react-bootstrap` for styling.
 
-I set up it without the use of "create-react-app".
+I set it up without the use of "create-react-app".
 
 It has an express mock server to be able to develop locally without depending on an API implementation.
 

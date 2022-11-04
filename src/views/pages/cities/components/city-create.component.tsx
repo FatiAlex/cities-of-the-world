@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Modal from '../../../components/modal.component';
 import { Button } from 'react-bootstrap';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CityForm from './city-form.component';
 import { CityModel, ICityFormView } from '../../../../core/models/city.models';
 import * as CityService from '../../../../core/services/city.services';
@@ -31,11 +31,15 @@ const CityCreate = () => {
       CityService.postCity(CityAdapter.adaptCityFormViewToCityFormDTO(city)),
     fetchAllCities,
     handleShow,
+    () => setCity(new CityModel()),
   );
 
   // handlers
   const handleConfirm = () => {
-    if (city.title) {
+    const notValid = Object.keys(city).find(
+      (key: string) => key !== 'id' && city[key] === '',
+    );
+    if (!notValid) {
       createCity();
     }
   };

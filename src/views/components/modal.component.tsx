@@ -28,7 +28,7 @@ const Modal = (props: IModalProps) => {
         {showFooter && (
           <BModal.Footer>
             <Button variant="secondary" onClick={handleHide}>
-              Close
+              Cancel
             </Button>
             <Button variant="primary" onClick={handleConfirm}>
               {confirmLabel}
