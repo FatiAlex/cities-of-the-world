@@ -2,7 +2,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "jsx": "react",
-    "types": ["node", "jest"],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "esModuleInterop": true,
   },
   "include": [

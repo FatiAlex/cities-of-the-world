@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-let citiesMock = require('./data/cities.mock');
+let citiesMock = require('./data/cities.data');
 let count = citiesMock.length;
 
 const app = express();

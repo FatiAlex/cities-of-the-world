@@ -6,7 +6,12 @@ const Header = () => {
   return (
     <div className="layout-header">
       <div className="layout-header__icon-container">
-        <BiWorld className="layout-header__icon" color="white" size="4rem" />
+        <BiWorld
+          className="layout-header__icon"
+          color="white"
+          size="4rem"
+          data-testid="header-icon-test"
+        />
       </div>
     </div>
   );

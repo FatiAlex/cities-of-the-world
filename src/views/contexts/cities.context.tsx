@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { ICityDetailView } from '../../core/models/city.models';
-import { ICitiesContext } from './cities.context.types';
+import { ICitiesContext } from './types/cities.context.types';
 import useFetchByGetMethod from '../hooks/use-fetch-by-get-method.hook';
 import * as CityService from '../../core/services/city.services';
 import * as CityAdapter from '../../core/adapters/city.adapter';

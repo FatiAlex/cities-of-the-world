@@ -1,5 +1,5 @@
-import { ICityDetailView } from '../../core/models/city.models';
-import { IErrorView } from '../../core/models/error.model';
+import { ICityDetailView } from '../../../core/models/city.models';
+import { IErrorView } from '../../../core/models/error.model';
 import * as React from 'react';
 
 export interface ICitiesContext {
