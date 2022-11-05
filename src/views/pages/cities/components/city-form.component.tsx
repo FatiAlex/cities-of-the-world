@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Alert, Form } from 'react-bootstrap';
 import { ICityFormProps } from '../types/city-form.component.types';
+import { validateNumberField } from '../../../../core/utils/number.util';
 
 const CityForm = (props: ICityFormProps) => {
   // props
@@ -46,23 +47,25 @@ const CityForm = (props: ICityFormProps) => {
         <Form.Group className="mb-3">
           <Form.Label>Latitude *</Form.Label>
           <Form.Control
-            type="number"
+            type="text"
             required
             value={city.latitude}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              handleFormOnChange(e, 'latitude')
-            }
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              const isNumber = validateNumberField(e.target.value);
+              isNumber && handleFormOnChange(e, 'latitude');
+            }}
           />
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Longitude *</Form.Label>
           <Form.Control
-            type="number"
+            type="text"
             required
             value={city.longitude}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              handleFormOnChange(e, 'longitude')
-            }
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              const isNumber = validateNumberField(e.target.value);
+              isNumber && handleFormOnChange(e, 'longitude');
+            }}
           />
         </Form.Group>
         <Form.Group className="mb-3">
