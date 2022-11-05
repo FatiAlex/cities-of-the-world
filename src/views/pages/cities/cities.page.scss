@@ -1,0 +1,9 @@
+@import 'styles/cities-table.component';
+@import 'styles/city-detail.component';
+
+.cities-page {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

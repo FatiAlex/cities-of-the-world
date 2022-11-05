@@ -1,0 +1,28 @@
+// ****************************
+// Overwrites Bootstrap Buttons
+// ****************************
+
+.btn {
+  min-width: 120px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  @include button-variant(
+    $background: $custom-primary,
+    $border: $custom-primary,
+    $color: $custom-btn-color,
+    $active-color: $custom-btn-color,
+    $hover-color: $custom-btn-color
+  );
+}
+
+.btn-secondary {
+  @include button-variant(
+    $background: $custom-secondary,
+    $border: $custom-secondary,
+    $color: $custom-btn-color,
+    $active-color: $custom-btn-color,
+    $hover-color: $custom-btn-color
+  );
+}

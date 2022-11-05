@@ -1,0 +1,20 @@
+/* abstracts */
+@import 'abstracts/variables';
+
+/* themes */
+@import 'themes/default';
+
+/* vendors */
+@import 'vendors/bootstrap';
+
+/* bootstrap components */
+@import 'components/buttons';
+@import 'components/toast';
+
+/* project components */
+@import '../views/components/styles/header.component';
+@import '../views/components/styles/layout.component';
+@import '../views/components/styles/map.component';
+
+/* pages */
+@import '../views/pages/cities/cities.page';

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "jsx": "react",
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "esModuleInterop": true,
+  },
+  "include": [
+    "./config/jest/jest-setup.ts",
+  ],
+  "files": [
+    "./config/typescript/assets.d.ts"
+  ],
+}

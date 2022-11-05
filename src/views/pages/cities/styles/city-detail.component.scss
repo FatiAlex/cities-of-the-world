@@ -1,0 +1,15 @@
+.city-detail {
+  &__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  &__map-title {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-top: 10px;
+  }
+}
