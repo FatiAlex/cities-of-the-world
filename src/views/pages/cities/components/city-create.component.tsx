@@ -16,6 +16,7 @@ const CityCreate = () => {
 
   // states
   const [city, setCity] = useState<ICityFormView>(new CityModel());
+  const [formError, setFormError] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
 
   // handlers
@@ -32,6 +33,7 @@ const CityCreate = () => {
     fetchAllCities,
     handleShow,
     () => setCity(new CityModel()),
+    () => setFormError(false),
   );
 
   // handlers
@@ -39,9 +41,10 @@ const CityCreate = () => {
     const notValid = Object.keys(city).find(
       (key: string) => key !== 'id' && city[key] === '',
     );
-    if (!notValid) {
-      createCity();
+    if (notValid) {
+      return setFormError(true);
     }
+    return createCity();
   };
 
   // render
@@ -56,9 +59,13 @@ const CityCreate = () => {
         headerLabel="City"
         confirmLabel="Create"
         handleConfirm={handleConfirm}
+        handleHide={() => {
+          setShow(false);
+          setFormError(false);
+        }}
         showFooter
       >
-        <CityForm city={city} setCity={setCity} />
+        <CityForm city={city} setCity={setCity} formError={formError} />
       </Modal>
       <Error error={error} setError={setError} />
     </>
