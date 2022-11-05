@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const { merge } = require('webpack-merge');
 
@@ -50,6 +51,16 @@ const commonConfig = {
     }),
     new CleanWebpackPlugin(),
     new Dotenv(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public/'),
+          globOptions: {
+            ignore: ['**/index.html'],
+          },
+        },
+      ],
+    }),
   ],
 };
 
