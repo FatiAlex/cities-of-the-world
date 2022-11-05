@@ -80,7 +80,7 @@ const CityDetail = (props: ICityDetailProps) => {
             <p>{city.content}</p>
             {city.longitude && city.latitude && (
               <>
-                <h4 className="city-detail__map-title">Ubicación</h4>
+                <h4 className="city-detail__map-title">Ubication</h4>
                 <Wrapper
                   apiKey={process.env.GOOGLE_MAPS_API_KEY}
                   render={render}
